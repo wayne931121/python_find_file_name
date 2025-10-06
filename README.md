@@ -23,6 +23,8 @@ find('*.jpg', r'C:\Users\原神\Downloads') #test on windows11, my computer.
 find('*.txt', '/') #test on colab linux
 find('*.jpg', '/content') #test on colab linux
 find('*sample*', '/') #test on colab linux
+
+print()
 ```
 
 # source and reference
