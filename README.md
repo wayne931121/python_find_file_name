@@ -21,6 +21,6 @@ find('*.txt', '/')
 find('*.jpg', '/content')
 ```
 
-# reference
+# source and reference
 https://stackoverflow.com/a/1724723/19470749 <br>
 https://www.runoob.com/python/os-walk.html
