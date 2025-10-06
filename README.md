@@ -19,6 +19,7 @@ def find(pattern, path):
 find('*yourfilenameordictname*', 'base_path')
 find('*.txt', '/')
 find('*.jpg', '/content')
+find('*sample*', '/')
 ```
 
 # source and reference
