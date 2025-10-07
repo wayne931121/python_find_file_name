@@ -34,8 +34,8 @@ https://www.runoob.com/python/os-walk.html
 # Why I need this script?
 I don't know where the huggingface download the model, and after search it download to cache folder, but I don't know where it is, so I directly use this script to search D drive and C drive, and then success find.
 ```py
-find("text_encoder", "D://")
-find("text_encoder", "C://")
+find("*text_encoder*", "D://")
+find("*text_encoder*", "C://")
 ```
 
 Notice, you can also set huggingface cache dir
