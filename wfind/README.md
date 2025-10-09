@@ -3,6 +3,15 @@ This file is from: https://github.com/wayne931121/python_find_file_name
 # python_find_file_name
 find file or dir location.
 
+# Install
+```cmd
+pip install https://raw.githubusercontent.com/wayne931121/python_find_file_name/refs/heads/main/wfind/dist/wfind-0.0.1.tar.gz
+```
+or
+```cmd
+pip install wfind
+```
+
 # Usage
 python -m find "base_path" "file_or_directory_name"
 ```cmd
@@ -50,3 +59,4 @@ Notice, you can also set huggingface cache dir
 ```
 pipe = CogVideoXImageToVideoPipeline.from_pretrained(model_id,text_encoder=text_encoder,transformer=transformer,vae=vae,torch_dtype=torch.float16,cache_dir="D://3")
 ```
+
