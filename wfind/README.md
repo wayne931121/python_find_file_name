@@ -1,3 +1,4 @@
+This file is for https://pypi.org/project/wfind/ <br>
 This file is from: https://github.com/wayne931121/python_find_file_name
 
 # python_find_file_name
@@ -59,4 +60,5 @@ Notice, you can also set huggingface cache dir
 ```
 pipe = CogVideoXImageToVideoPipeline.from_pretrained(model_id,text_encoder=text_encoder,transformer=transformer,vae=vae,torch_dtype=torch.float16,cache_dir="D://3")
 ```
+
 
