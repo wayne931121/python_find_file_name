@@ -1,7 +1,10 @@
 # python_find_file_name
 find file or dir location.
 
-# Code
+# Install
+https://github.com/wayne931121/python_find_file_name/blob/main/wfind/README.md
+
+# Code (without installed)
 ```py
 import os, fnmatch
 
