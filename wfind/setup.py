@@ -9,14 +9,14 @@ with open("README.md","r",encoding="utf-8") as f:
 
 setup(
     name="wfind",
-    version="0.0.1",
+    version="0.0.2",
     author="wayne931121",
     author_email="",
-    description="debug",
+    description="Find file or folder by Python, Faster than Windows File Explorer.",
     long_description=md,
     long_description_content_type="text/markdown",
-    license="",
-    url="https://github.com/wayne931121",
+    license="Attribution 4.0 International, Copyright (c) 2025 wayne931121.",
+    url="https://github.com/wayne931121/python_find_file_name",
     packages=find_packages(),
     install_requires=[],
     classifiers=[
