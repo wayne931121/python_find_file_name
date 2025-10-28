@@ -1,14 +1,7 @@
-This file is for https://pypi.org/project/wfind/ <br>
-This file is from: https://github.com/wayne931121/python_find_file_name
-
 # python_find_file_name
 find file or dir location.
 
 # Install
-```cmd
-pip install https://raw.githubusercontent.com/wayne931121/python_find_file_name/refs/heads/main/wfind/dist/wfind-0.0.1.tar.gz
-```
-or
 ```cmd
 pip install wfind
 ```
@@ -16,33 +9,27 @@ pip install wfind
 # Usage
 python -m find "base_path" "file_or_directory_name"
 ```cmd
-python -m find "C:\" "*.jpg" 
-```
+python -m find --base_path "C:\" --pattern ".mp4"
+python -m find --base_path "C:\" --pattern "mat" --mode "in" --folder
+python -m find --base_path "C:\" --pattern ".png" --mode "in" --file
+python -m find --base_path "C:\" --mode "re" -re ".pdf$" 
+python -m find --base_path "C:\" --pattern "*.jpg" --mode "fm" 
 
-# Code
-```py
-import os, fnmatch
+python -m find --help
+usage: __main__.py [-h] [-p BASE_PATH] [-d PATTERN] [-file] [-folder] [-m MODE] [-re RE]
 
-def find(pattern, path, prt=1):
-    result = []
-    for root, dirs, files in os.walk(path):
-        for name in files:
-            if fnmatch.fnmatch(name, pattern):
-                result.append(os.path.join(root, name))
-                if prt: print(result[-1])
-        for name in dirs:
-            if fnmatch.fnmatch(name, pattern):
-                result.append(os.path.join(root, name))
-                if prt: print(result[-1])
-    return result
+Find File or Folder Name.
 
-find('*yourfilenameordictname*', 'base_path')
-find('*.jpg', r'C:\Users\原神\Downloads') #test on windows11, my computer.
-find('*.txt', '/') #test on colab linux
-find('*.jpg', '/content') #test on colab linux
-find('*sample*', '/') #test on colab linux
-
-print()
+options:
+  -h, --help            show this help message and exit
+  -p, --base_path BASE_PATH
+                        base path
+  -d, --pattern PATTERN
+                        dest pattern
+  -file, --file         only search file
+  -folder, --folder     only search folder
+  -m, --mode MODE       mode: -m in, -m fm, -re
+  -re, --re RE          regex
 ```
 
 # source and reference
@@ -60,5 +47,6 @@ Notice, you can also set huggingface cache dir
 ```
 pipe = CogVideoXImageToVideoPipeline.from_pretrained(model_id,text_encoder=text_encoder,transformer=transformer,vae=vae,torch_dtype=torch.float16,cache_dir="D://3")
 ```
+
 
 
