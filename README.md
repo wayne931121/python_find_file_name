@@ -103,10 +103,3 @@ Notice, you can also set huggingface cache dir
 ```
 pipe = CogVideoXImageToVideoPipeline.from_pretrained(model_id,text_encoder=text_encoder,transformer=transformer,vae=vae,torch_dtype=torch.float16,cache_dir="D://3")
 ```
-
-
-
-
-
-
-
