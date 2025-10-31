@@ -5,6 +5,13 @@ find file or dir location.
 ```cmd
 pip install wfind
 ```
+### Warning
+before you install this package, you should check no moudle named find:
+```py
+#prevent python package name conflicts
+import find
+#Output: ModuleNotFoundError: No module named 'find'
+```
 
 # Usage
 python -m find "base_path" "file_or_directory_name"
@@ -36,8 +43,6 @@ python -m find --pattern ".png"
 ```
 import
 ```py
-import find
-
 """
 Usage:
 
@@ -53,7 +58,8 @@ matchMode:
   fm (fnmatch)
 """
 
-find.find("/",".so") #linux
+import find
+result = find.find(".so","/", prt=0)
 ```
 
 # source and reference
@@ -71,6 +77,7 @@ Notice, you can also set huggingface cache dir
 ```
 pipe = CogVideoXImageToVideoPipeline.from_pretrained(model_id,text_encoder=text_encoder,transformer=transformer,vae=vae,torch_dtype=torch.float16,cache_dir="D://3")
 ```
+
 
 
 
