@@ -30,6 +30,31 @@ options:
   -folder, --folder     only search folder
   -m, --mode MODE       mode: -m in, -m fm, -m re
 ```
+find without base_path will use current directory
+```
+python -m find --pattern ".png"
+```
+import
+```py
+import find
+
+"""
+Usage:
+
+find(pattern, path, prt=1, typeMode="both", matchMode="in")
+finder(name, pattern, matchMode)
+typeMode:
+  both
+  file
+  folder
+matchMode:
+  in (in)
+  re (regex)
+  fm (fnmatch)
+"""
+
+find.find("/",".so") #linux
+```
 
 # source and reference
 https://stackoverflow.com/a/1724723/19470749 <br>
@@ -46,6 +71,7 @@ Notice, you can also set huggingface cache dir
 ```
 pipe = CogVideoXImageToVideoPipeline.from_pretrained(model_id,text_encoder=text_encoder,transformer=transformer,vae=vae,torch_dtype=torch.float16,cache_dir="D://3")
 ```
+
 
 
 
