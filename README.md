@@ -12,11 +12,11 @@ python -m find "base_path" "file_or_directory_name"
 python -m find --base_path "C:\" --pattern ".mp4"
 python -m find --base_path "C:\" --pattern "mat" --mode "in" --folder
 python -m find --base_path "C:\" --pattern ".png" --mode "in" --file
-python -m find --base_path "C:\" --mode "re" -re ".pdf$" 
+python -m find --base_path "C:\" --pattern ".pdf$" --mode "re"
 python -m find --base_path "C:\" --pattern "*.jpg" --mode "fm" 
 
 python -m find --help
-usage: __main__.py [-h] [-p BASE_PATH] [-d PATTERN] [-file] [-folder] [-m MODE] [-re RE]
+usage: Python File Finder [-h] [-p BASE_PATH] [-d PATTERN] [-file] [-folder] [-m MODE]
 
 Find File or Folder Name.
 
@@ -28,8 +28,7 @@ options:
                         dest pattern
   -file, --file         only search file
   -folder, --folder     only search folder
-  -m, --mode MODE       mode: -m in, -m fm, -re
-  -re, --re RE          regex
+  -m, --mode MODE       mode: -m in, -m fm, -m re
 ```
 
 
