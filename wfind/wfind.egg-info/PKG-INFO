@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: wfind
-Version: 0.0.3
+Version: 0.0.4
 Summary: Find file or folder by Python, Faster than Windows File Explorer.
 Home-page: https://github.com/wayne931121/python_find_file_name
 Author: wayne931121
@@ -28,6 +28,13 @@ find file or dir location.
 ```cmd
 pip install wfind
 ```
+### Warning
+before you install this package, you should check no moudle named find:
+```py
+#prevent python package name conflicts
+import find
+#Output: ModuleNotFoundError: No module named 'find'
+```
 
 # Usage
 python -m find "base_path" "file_or_directory_name"
@@ -53,6 +60,56 @@ options:
   -folder, --folder     only search folder
   -m, --mode MODE       mode: -m in, -m fm, -m re
 ```
+find without base_path will use current directory
+```
+python -m find --pattern ".png"
+```
+import
+```py
+"""
+Usage:
+
+find(pattern, path, prt=1, typeMode="both", matchMode="in")
+finder(name, pattern, matchMode)
+typeMode:
+  both
+  file
+  folder
+matchMode:
+  in (in)
+  re (regex)
+  fm (fnmatch)
+"""
+
+import find
+result = find.find(".so","/", prt=0)
+```
+
+# Code (without installed)
+```py
+import os, fnmatch
+
+def find(pattern, path, prt=1):
+    result = []
+    for root, dirs, files in os.walk(path):
+        for name in files:
+            if fnmatch.fnmatch(name, pattern):
+                result.append(os.path.join(root, name))
+                if prt: print(result[-1])
+        for name in dirs:
+            if fnmatch.fnmatch(name, pattern):
+                result.append(os.path.join(root, name))
+                if prt: print(result[-1])
+    return result
+
+find('*yourfilenameordictname*', 'base_path')
+find('*.jpg', r'C:\Users\原神\Downloads') #test on windows11, my computer.
+find('*.txt', '/') #test on colab linux
+find('*.jpg', '/content') #test on colab linux
+find('*sample*', '/') #test on colab linux
+
+print()
+```
 
 # source and reference
 https://stackoverflow.com/a/1724723/19470749 <br>
@@ -69,6 +126,3 @@ Notice, you can also set huggingface cache dir
 ```
 pipe = CogVideoXImageToVideoPipeline.from_pretrained(model_id,text_encoder=text_encoder,transformer=transformer,vae=vae,torch_dtype=torch.float16,cache_dir="D://3")
 ```
-
-
-
