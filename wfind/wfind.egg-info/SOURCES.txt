@@ -3,6 +3,7 @@ README.md
 setup.py
 find/__init__.py
 find/__main__.py
+find/find.py
 wfind.egg-info/PKG-INFO
 wfind.egg-info/SOURCES.txt
 wfind.egg-info/dependency_links.txt

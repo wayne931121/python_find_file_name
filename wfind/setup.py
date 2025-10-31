@@ -9,7 +9,7 @@ with open("README.md","r",encoding="utf-8") as f:
 
 setup(
     name="wfind",
-    version="0.0.2",
+    version="0.0.3",
     author="wayne931121",
     author_email="",
     description="Find file or folder by Python, Faster than Windows File Explorer.",
